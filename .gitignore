@@ -21,3 +21,4 @@
 ####### LIST #######
 .idea/
 module.iml
+node_modules/
