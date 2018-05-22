@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "dev": "webpack --mode development --output ./dist/main.js",
-    "build": "webpack --mode production --output ./dist/main.js"
+    "build": "webpack --mode production --output ./dist/main.js",
+    "test": "mocha $(find ./ -name '*./tdd/**/*.test.js') --recursive -w"
   },
   "repository": {
     "type": "git",
