@@ -1,5 +1,5 @@
 /**
- * 링크 클릭 시 모바일 || pc 분기 입니다.
+ * 클릭시 attribute의 일부를 텍스트를 수정합니다. PlatformBranch.filter 내용에 따라 모바일 || pc 분기 등으로 사용할 수 있습니다.
  * PlatformBranch.platformTest(id, attribute, searchWord, changeWord)
  **/
 var PlatformBranch = {
@@ -13,7 +13,7 @@ var PlatformBranch = {
 
         return getId.setAttribute(attribute, changeUrl());
     },
-    "platformTest" : function (id, attribute, searchWord, changeWord) {
+    "changeAttribute" : function (id, attribute, searchWord, changeWord) {
         if ( navigator.platform ) {
             if ( this.filter.indexOf( navigator.platform.toLowerCase() ) < 0 ) {
                 //mobile
@@ -24,5 +24,5 @@ var PlatformBranch = {
 };
 
 var goToMobile = function(){
-    return  PlatformBranch.platformTest('goToEventPage', 'href', '/shop/', '/m2/');
+    return  PlatformBranch.changeAttribute('goToEventPage', 'href', '/shop/', '/m2/');
 };
