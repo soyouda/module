@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 module.exports = {
     module: {
         rules: [
@@ -17,6 +18,19 @@ module.exports = {
                         options: { minimize: true }
                     }
                 ]
+            },
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader"
+                }, {
+                    loader: "css-loader"
+                }, {
+                    loader: "sass-loader",
+                    options: {
+                        includePaths: ["absolute/path/a", "absolute/path/b"]
+                    }
+                }]
             }
         ]
     },

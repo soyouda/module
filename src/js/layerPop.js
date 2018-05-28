@@ -1,9 +1,11 @@
 // 1. 클릭 on off 토글
+
 var layerPopup = {
     "status" : true,
-    "addClass" : function() {
-        document.querySelector('button').addEventListener('click', function (cssClass) {
-            return this.addClass(cssClass);
+    "cssClass" : 'test',
+    "addClass" : function(cssClass) {
+        this.addEventListener('click', function () {
+            return console.log('test');//return this.addClass(cssClass);
         })
     },
     "statusToggle" : function () {
@@ -15,6 +17,7 @@ var layerPopup = {
         }
     }
 };
+
 
 // 2. 배경 on off
 
